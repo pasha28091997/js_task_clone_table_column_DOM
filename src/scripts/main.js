@@ -1,14 +1,14 @@
 'use strict';
 
 const table = document.querySelector('table');
-const rows = table.querySelector('tr');
+const rows = table.querySelectorAll('tr');
 
-rows.forEach((row) => {
-  const cells = row.querySelector('td, th');
+Array.from(rows).forEach((row) => {
+  const cells = row.querySelectorAll('td, th');
 
   if (cells.length > 2) {
     const clonedCells = cells[1].cloneNode(true);
 
-    row.inserBefore(clonedCells, cells[cells.length - 1]);
+    row.insertBefore(clonedCells, cells[cells.length - 1]);
   }
 });
